@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<div class="row section-bar"  style="padding-left: 500px; padding-right: 500px">
+  <div class="section-bar-text">
+    Raw Data
+  </div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div class="p-bold" style="margin-bottom: 8px; margin-top: 8px; font-weight: 600" >
+      This data is being captured and stored at 5-minute intervals and is then instantly plotted onto the graphs below.
+	</div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div style="margin-bottom: 8px; margin-top: 8px">
+      <p>Please select a data field to view its graph: </p>
+		  <select name="rawfields" id="rawfields" oninput="rawgraphchangeFunction()">
+
+		  	<option value="IndoorAirPoll">Indoor Air Pollution Levels via Sensors</option>
+
+		    <option value="SensorOutdoorHum">Outdoor Humidity via Sensor</option>
+		    <option value="SensorOutdoorTemp">Outdoor Temperature via Sensor</option>
+		    <option value="SensorTempDiff">Temperature Difference via Sensors</option>
+		    <option value="SensorIndoorTemp">Indoor Temperature via Sensors</option>
+			
+			<option value="APIOutdoorHum">Outdoor Humidity via OpenWeatherMap API</option>
+		    <option value="APIOutdoorTemp">Outdoor Temperature via OpenWeatherMap API</option>
+		    <option value="APITempDiff">Temperature Difference via OpenWeatherMap API & Sensors</option>
+		    
+		  </select>
+    </div>
+  </div>
+
+  <div class="row my-auto" style="justify-content: center;">
+  	<div style="margin-bottom: 90px;">
+		<div class="" id="rawchart" >
+
+		    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1266016/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+		</div>
+    </div>
+  </div>
+
+
+
+
+<div class="row section-bar"  style="padding-left: 300px; padding-right: 300px">
+  <div class="section-bar-text">
+    Smoothed Data
+  </div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div class="p-bold" style="margin-bottom: 8px; margin-top: 8px; font-weight: 600" >
+      Every 15 minutes, the previous 15-minutes worth of raw data values are averaged, stored and then instantly plotted onto the graphs below. This is done to smooth out the graphs and cater for anomalies.
+	</div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div style="margin-bottom: 8px; margin-top: 8px">
+      <p>Please select a data field to view its graph: </p>
+		  <select name="smoothedfields" id="smoothedfields" oninput="smoothedgraphchangeFunction()">
+
+		  	<option value="IndoorAirPoll">Indoor Air Pollution Levels via Sensors</option>
+
+		    <option value="SensorOutdoorHum">Outdoor Humidity via Sensor</option>
+		    <option value="SensorOutdoorTemp">Outdoor Temperature via Sensor</option>
+		    <option value="SensorTempDiff">Temperature Difference via Sensors</option>
+		    <option value="SensorIndoorTemp">Indoor Temperature via Sensors</option>
+			
+			<option value="APIOutdoorHum">Outdoor Humidity via OpenWeatherMap API</option>
+		    <option value="APIOutdoorTemp">Outdoor Temperature via OpenWeatherMap API</option>
+		    <option value="APITempDiff">Temperature Difference via OpenWeatherMap API & Sensors</option>
+		    
+		  </select>
+    </div>
+  </div>
+
+	<div class="row my-auto" style="justify-content: center;">
+	  	<div style="margin-bottom: 90px;">
+			<div class="" id="smoothedchart" >
+
+			    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1265995/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+			</div>
+	    </div>
+	</div>
+
+
+
+
+<div class="row section-bar"  style="padding-left: 300px; padding-right: 300px">
+  <div class="section-bar-text">
+    Predicted Input Data (Hourly)
+  </div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div class="p-bold" style="margin-bottom: 8px; margin-top: 8px; font-weight: 600" >
+      Every hour, predicted sensor data are calculated and OpenWeatherMap forecast data are obtained using historical sensor data and OpenWeatherMap's hourly-forecast API, respectively. This predicted set of input data is then stored and instantly plotted onto the graphs below.
+	</div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div style="margin-bottom: 8px; margin-top: 8px">
+      <p>Please select a data field to view its graph: </p>
+		  <select name="predictinputfields" id="predictinputfields" oninput="predictinputgraphchangeFunction()">
+
+		    <option value="SensorOutdoorHum">Predicted Outdoor Humidity based Sensor</option>
+		    <option value="SensorOutdoorTemp">Predicted Outdoor Temperature based Sensor</option>
+		    <option value="SensorTempDiff">Predicted Temperature Difference based Sensors</option>
+			
+			<option value="APIOutdoorHum">Predicted Outdoor Humidity based OpenWeatherMap API</option>
+		    <option value="APIOutdoorTemp">Predicted Outdoor Temperature based OpenWeatherMap API</option>
+		    <option value="APITempDiff">Predicted Temperature Difference based OpenWeatherMap API & Sensors</option>
+		    
+		  </select>
+    </div>
+  </div>
+
+	<div class="row my-auto" style="justify-content: center;">
+	  	<div style="margin-bottom: 90px;">
+			<div class="" id="predictinputchart" >
+
+			    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1268592/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+			</div>
+	    </div>
+	</div>
+
+
+
+
+<div class="row section-bar"  style="padding-left: 300px; padding-right: 300px">
+  <div class="section-bar-text">
+    Predicted Output Air Pollution (Hourly)
+  </div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div class="p-bold" style="margin-bottom: 8px; margin-top: 8px; font-weight: 600" >
+      Every hour, the predicted input data from the section above is passed through predictive models to generate air pollution values. Two predicted air pollution values are calculated based on sensor inputs vs OpenWeatherMap API inputs. The two values are then stored and instantly plotted onto the graphs below.
+	</div>
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div style="margin-bottom: 8px; margin-top: 8px">
+      <p>Please select a data field to view its graph: </p>
+		  <select name="predictoutputfields" id="predictoutputfields" oninput="predictoutputgraphchangeFunction()">
+		    <option value="PredictSensorAirPoll">Predicted Air Pollution based on Sensor inputs</option>
+		    <option value="PredictAPIAirPoll">Predicted Air Pollution based on OpenWeatherMap API inputs</option>
+		  </select>
+    </div>
+  </div>
+
+	<div class="row my-auto" style="justify-content: center;">
+	  	<div style="margin-bottom: 90px;">
+			<div class="" id="predictoutputchart" >
+			    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1268617/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+			</div>
+	    </div>
+	</div>
+
+{% endblock content%}

@@ -1,0 +1,239 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:ital,wght@0,200;0,600;1,200;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bowlby+One+SC&family=Montserrat:ital,wght@0,200;0,600;1,200;1,600&display=swap');
+
+body{
+  min-height: 100vh;
+  padding-top: 160px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  display: grid;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.bg-steel {
+ 
+    background: linear-gradient(#0A8B94, 50%, #FFE69C00);
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+p {
+  color: #444444;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 15px;
+}
+
+.p-bold {
+  color: #444444;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 15px;
+}
+
+.titlefont {
+  font-size: 35px;
+  color:#00656D;
+  font-family: 'Bowlby One SC', cursive;
+  line-height: 90%;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.logotitlefont {
+  margin: 0px;
+  font-size: 40px;
+  color:#FFFFFF;
+  font-family: 'Bowlby One SC', cursive;
+  line-height: 90%;
+  text-align: center;
+}
+
+.logosubfont {
+  margin: 0px;
+  font-size: 14px;
+  color:#00656D;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.navbarfont {
+
+  font-size: 20px;
+  color:#FFFFFF;
+  font-family: 'Bowlby One SC', cursive;
+  text-align: center;
+}
+
+.content-section {
+  background: #DEFCFE;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.content-section-no-bkgrnd {
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.content-section-no-bkgrnd-no-justification {
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.section-bar{
+  justify-content: center;
+  background: linear-gradient(#FFE69C, 60%, #FFE69C00);
+  padding: 10px 30px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.section-bar-text{
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 25px;
+  color: #9C7500;
+  margin-top: 15px; 
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+
+.title-wrapper{
+  width:30%;
+  display: grid;
+  justify-content: left;
+  text-align:left;
+  align-items:left; 
+}
+
+.nav-wrapper{
+  width: 60%;
+  margin:20px ;
+  display: grid;
+  justify-content: left;
+}
+
+
+/*Navigation Animation */
+
+.hoverable{
+
+  transition-duration: .3s;
+  transition-property:transform;
+  margin-right: 40px;
+}
+
+.hoverable:before{
+  position:absolute;
+  pointer-events: none;
+  z-index:-1;
+  content: '';
+  top: 80%;
+  right: 0%;
+  height:8px;
+  width:100%;
+  opacity:0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 90%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 90%);
+  /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.hoverable:hover, .hoverable:active, .hoverable:focus{
+  transform: translateY(-5px);
+  color: white;
+  text-decoration: none;
+
+}
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before{
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+
+
+@keyframes bounce-animation {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 2s;
+}

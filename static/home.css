@@ -1,0 +1,129 @@
+
+.switch {
+  position: relative;
+  margin-top: 7px;
+  display: inline-block;
+  width: 70px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #05abe0;
+  background: -moz-linear-gradient(30deg, #00EEFF 0%, #0A8B94 100%);
+  background: -webkit-linear-gradient(30deg, #00EEFF 0%,#0A8B94 100%);
+  background: linear-gradient(30deg, #00EEFF 0%,#0A8B94 100%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(46px);
+  -ms-transform: translateX(46px);
+  transform: translateX(46px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggle-font{
+  color: #444444;
+  font-weight: 500;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 0px;
+  color: #444444;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.toggle-wrapper{
+  width: 100%;
+  margin-bottom: 20px;
+  display: grid;
+  justify-content: right;
+  align-items: center;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+}
+
+.central-wrapper{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0px;
+  grid-auto-flow: row;
+  vertical-align: middle;
+}
+
+.airpollvalue-font{
+  color: #444444;
+  font-weight: 500;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: -10px;
+}
+
+.windowActionvalue-font{
+  color: #444444;
+  font-weight: 500;
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.row-bottom-heavy-padding{
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+
+.quote-section {
+  background: #DEFCFE;
+  padding: 30px 20px;
+  border-radius: 15px;
+}
+
+.quote-text{
+  color: #444444;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  font-size: 23px;
+  font-family: 'Montserrat', sans-serif;
+}
+

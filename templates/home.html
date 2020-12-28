@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block extendedCSS %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+{% endblock extendedCSS %}
+
+{% block content %}
+
+<div class="row titlefont">
+
+      Know the air you breathe.
+
+</div>
+
+<div class="row my-auto content-section-no-bkgrnd">
+    <div style="margin-bottom: 20px; margin-top: 20px; font-weight: 600;" >
+      <p>
+        At LibAirty, we've proven that outdoor weather has a significant effect on the quality of air we breathe. We know what weather trends to look for, and we can use that knowledge to predict the kind of air will be brought into your home. 
+
+        <br><br>
+
+        The gauge in the section below displays what we predict the air quality will be in your room in the next hour if you leave your windows open. If the air pollution levels are predicted to enter the red-zone (500+ PPM), you will be prompted to close your windows. This way, we're preventing some seriously polluted air from entering your room.
+        
+        <br><br>
+
+        The next time we forecast the pollution levels in your room to drop below the red-zone, we'll trigger a prompt to open your windows and get the air circulating again. And this time, we don't have to worry about any nasty pollutants entering our air and pushing us back into the red-zone... at least not for the next hour!
+      </p>
+  </div>
+</div>
+
+
+<div class="row toggle-wrapper">
+      
+      <div class="toggle-font" id="toggleValue" >Sensor-Based Information</div>
+   
+      <label class="switch" >
+          <input type="checkbox" id="myToggle" onclick="toggleFunctions({{ sensorOutputAirpollData }},{{ APIOutputAirpollData }}, '{{ sensorWindowAction }}', '{{ APIWindowAction }}' )">
+          <span class="slider round"></span>
+      </label>
+
+</div>
+
+<div class="row section-bar">
+  <div class="section-bar-text">
+    Early Prediction, Early Response!
+  </div>
+</div>
+
+<div class="row row-bottom-heavy-padding">
+  <div class="col-md-4 my-auto content-section">
+    <div style="margin-bottom: 8px; margin-top: 8px">
+      <p>In one hour, the air pollution level inside your room will be</p>
+      <div class="airpollvalue-font" id="outputAirPollValue" >{{ sensorOutputAirpollData }} PPM</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+      <div style="width: 100%; height: 250px; overflow: hidden">
+      <div class="" id="airpollgauge">
+        <iframe width="450" height="260" style="border: 0px solid #cccccc; position: relative; left: -60px; top: 0px" src="https://thingspeak.com/channels/1268617/widgets/253477"></iframe> 
+     </div>
+   </div>
+  </div>
+
+  <div class="col-md-4 my-auto content-section" >
+    <div style="margin-bottom: 10px; margin-top: 10px">
+      <div class="windowActionvalue-font" id="windowActionValue" >{{ sensorWindowAction }}</div> <p> your windows!</p>
+    </div>
+  </div>
+</div>
+
+<div class="row section-bar">
+  <div class="section-bar-text">
+    But what does my air look like right now?
+  </div>
+</div>
+
+<div class="row row-bottom-heavy-padding">
+  <div class="col-md-4 my-auto content-section">
+    <div style="margin-bottom: 8px; margin-top: 8px">
+      <p>Right now, the air pollution level in your room is </p>
+      <div class="airpollvalue-font" id="outputAirPollValue" >{{ currentAirpollData }} PPM</div>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+      <div style="width: 100%; height: 250px; overflow: hidden">
+        <iframe width="450" height="260" style="border: 0px solid #cccccc; position: relative; left: -60px; top: 0px" src="https://thingspeak.com/channels/1265995/widgets/253476"></iframe> 
+      </div>
+  </div>
+
+  <div class="col-md-4 my-auto quote-section" >
+    <div class="quote-text">
+      {{ currentAirQuote }}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+

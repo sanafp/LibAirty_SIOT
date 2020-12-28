@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<div class="row section-bar"  style="padding-left: 300px; padding-right: 300px">
+  <div class="section-bar-text">
+    About the Project
+  </div>
+</div>
+
+<div class="row" style="padding-top: 20px">
+
+	<div class="col-md-6 md-auto">
+
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/2jNBKEm75Ac" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	</div>
+
+	<div class="col-md-6 md-auto content-section-no-bkgrnd-no-justification" style="display: grid; text-align: justify; align-items: center;">
+		<div style="padding-left: 15px;">
+        At LibAirty, we've proven that outdoor weather has a significant effect on the quality of air we breathe. We know what weather trends to look for, and we can use that knowledge to predict the kind of air will be brought into your home. <br><br> The gauge in the section below displays what we predict the air quality will be in your room in the next hour if you leave your windows open. If the air pollution levels are predicted to enter the red-zone (500+ PPM), you will be prompted to close your windows. This way, we're preventing some seriously polluted air from entering your room.
+      </div>
+  </div>
+</div>
+
+
+
+<div class="row section-bar"  style="padding-left: 300px; padding-right: 300px; margin-top: 50px">
+  <div class="section-bar-text">
+    About the Designer
+  </div>
+</div>
+
+<div class="row" style="padding-top: 20px; padding-bottom: 50px" >
+
+	<div class="col-md-6 md-auto">
+
+		<img type="text/javascript"
+         src="{{ url_for('static', filename='designer_profile_photo.png') }}">
+</div>
+
+	<div class="col-md-6 md-auto content-section-no-bkgrnd-no-justification" style="display: grid; text-align: justify; align-items: center;">
+		<div style="padding-left: 15px;">
+			Hi there! I'm currently in my final year of Design Engineering (MEng) at Imperial College London, with a strong passion for designing and developing products and systems to improve comfort and quality of life. I love taking on an unfamiliar challenge and working to find an unusual and unique solution to a problem.
+
+			<br><br>
+
+			This project is part of my Sensing & Internet of Things (SIOT) Module, with potential to be integrated into my final year Master's Project.
+
+      </div>
+  </div>
+</div>
+	
+{% endblock content%}
