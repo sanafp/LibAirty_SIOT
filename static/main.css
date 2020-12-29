@@ -37,7 +37,7 @@ img {
 
 .bg-steel {
  
-    background: linear-gradient(#0A8B94, 50%, #FFE69C00);
+    background: linear-gradient(#0A8B94, 50%, #55CDD7);
 }
 
 .site-header .navbar-nav .nav-link {
@@ -171,7 +171,7 @@ p {
 
 .nav-wrapper{
   width: 60%;
-  margin:20px ;
+  margin:5px ;
   display: grid;
   justify-content: left;
 }

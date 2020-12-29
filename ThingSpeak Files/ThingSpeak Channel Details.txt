@@ -1,0 +1,19 @@
+---------------------------------------------
+ThingSpeak Channels for LibAirty_SIOT Project
+---------------------------------------------
+
+1. Raw Data
+	- Channel ID: 1266016
+	- URL: https://thingspeak.com/channels/1266016
+
+2. Smoothed Data
+	- Channel ID: 1265995
+	- URL: https://thingspeak.com/channels/1265995
+
+3. Predicted Input Data (Hourly)
+	- Channel ID: 1268592
+	- URL: https://thingspeak.com/channels/1268592
+
+4. Predicted Output Air Pollution (Hourly)
+	- Channel ID: 1268617
+	- URL: https://thingspeak.com/channels/1268617
