@@ -48,8 +48,8 @@ def home():
 		currentAirQuote = '"The air is not amazing, but it is definitely not bad!'
 	else:
 		currentAirQuote = '"Looking real good! Whatever it is your doing, keep it up!"'
-	
-    return render_template('home.html',title='Home', route="/home", sensorOutputAirpollData=sensorOutputAirpollData, APIOutputAirpollData=APIOutputAirpollData, sensorWindowAction=sensorWindowAction, APIWindowAction=APIWindowAction, currentAirpollData=currentAirpollData, currentAirQuote=currentAirQuote)
+
+	return render_template('home.html',title='Home', route="/home", sensorOutputAirpollData=sensorOutputAirpollData, APIOutputAirpollData=APIOutputAirpollData, sensorWindowAction=sensorWindowAction, APIWindowAction=APIWindowAction, currentAirpollData=currentAirpollData, currentAirQuote=currentAirQuote)
 
 
 @app.route("/about")
