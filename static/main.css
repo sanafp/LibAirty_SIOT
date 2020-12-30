@@ -1,8 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Montserrat:ital,wght@0,200;0,600;1,200;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bowlby+One+SC&family=Montserrat:ital,wght@0,200;0,600;1,200;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
 
 body{
   min-height: 100vh;
@@ -51,14 +50,14 @@ img {
 
 h1, h3, h4, h5, h6 {
   color: #444444;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   text-align: center;
 }
 
 h2{
   color: #444444;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   text-align: center;
   font-variant: small-caps;
@@ -67,15 +66,15 @@ h2{
 
 p {
   color: #444444;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
   text-align: center;
   font-size: 15px;
 }
 
 .p-bold {
   color: #444444;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   text-align: center;
   font-size: 15px;
@@ -83,7 +82,7 @@ p {
 
 .p-non-centered {
   color: #444444;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   font-size: 15px;
 }
@@ -111,8 +110,8 @@ p {
   margin: 0px;
   font-size: 14px;
   color:#00656D;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
 }
 
 .navbarfont {
