@@ -9,10 +9,10 @@ readModelChannelID = 1265995;
 % Smoothed Data Channel Read API Key 
 readModelAPIKey = 'WFWRRRJXJ0EIG7T8'; 
 
-startDate = [2020,12,22,22,59,01];
-endDate = [2020,12,23,14,02,52];
+startDate = [2020,12,23,09,09,09];
+endDate = [2020,12,30,23,58,54];
 
-% Extract relevant fields from Cleaned Data channel, between 22nd Dec 10:59:01pm and 23rd Dec 02:02:52pm
+% Extract relevant fields from Cleaned Data channel, between 23rd Dec 09:09:09pm and 30th Dec 23:58:54pm
 modelData = thingSpeakRead(readModelChannelID,'Fields',[1 2 3 5], 'DateRange',[datetime(startDate),datetime(endDate)], 'outputFormat','table', 'ReadKey',readModelAPIKey);
 modelSpec = 'IndoorAirPollution ~ OutdoorHumidity + OutdoorTemperature + TemperatureDifference'; %Create a linear formula for 'modelspec' as a function of the three inputs
 sensorModel = fitlm(modelData,modelSpec) %Create a model using the relevant columns from modelData based on modelSpec

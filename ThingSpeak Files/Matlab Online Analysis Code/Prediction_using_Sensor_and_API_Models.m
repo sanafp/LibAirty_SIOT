@@ -2,13 +2,13 @@
 %uploaded to the New Data Inputs Channel
 
 %Load in sensorModel
-dropboxUrl = strcat('https://www.dropbox.com/s/j9374w5a5wh7fvf/Sensor_Model.zip?dl=1');
+dropboxUrl = strcat('https://www.dropbox.com/s/mppni3j0vgyamny/Sensor_Model.zip?dl=1');
 websave('Sensor_Model',dropboxUrl);
 unzip('Sensor_Model');
 load('Sensor_Model.mat');
 
 %Load in APIModel
-dropboxUrl = strcat('https://www.dropbox.com/s/gpu479wggacmixj/API_Model.zip?dl=1');
+dropboxUrl = strcat('https://www.dropbox.com/s/g7z518pkcq7rtql/API_Model.zip?dl=1');
 websave('API_Model',dropboxUrl);
 unzip('API_Model');
 load('API_Model.mat');
