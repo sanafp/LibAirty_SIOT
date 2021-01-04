@@ -27,13 +27,13 @@
   </div>
 </div>
 
-<div class="row" style="padding-top: 50px; padding-bottom: 50px" >
+<div class="row" style="padding-top: 50px" >
 
 	<div class="col-md-6 md-auto content-section-no-bkgrnd-no-justification" style="display: grid; text-align: justify; align-items: center;">
 		<div style="padding-left: 15px;">
 			<h2> How does it work? </h2>
 			<div class = "p-non-centered">
-	       		At LibAirty, we've proven that outdoor weather has a significant effect on the quality of air we breathe. We know what weather trends to look for, and we can use that knowledge to predict the kind of air will be brought into your home. <br><br> The gauge in the section below displays what we predict the air quality will be in your room in the next hour if you leave your windows open. If the air pollution levels are predicted to enter the red-zone (500+ PPM), you will be prompted to close your windows. This way, we're preventing some seriously polluted air from entering your room.
+	       		Sensors are fitted inside the room and outside the house. These are wired to one Arduino Board which gathers weather data from both the sensors and OpenWeatherMap.org via an API. This data is then uploaded to 'Raw Data' - a ThingSpeak channel. This entire process is repeated every 5 minutes. <br><br> The last 15-minutes worth of raw data in the 'Raw Data' channel is then averaged and smoothed out using online Matlab analysis, and then this new smoothed data is stored in the 'Smoothed Data' channel for further data processing. This process is repeated every 15 minutes.
        		</div>
       </div>
   </div>
@@ -41,10 +41,38 @@
   <div class="col-md-6 md-auto">
 
 		<img type="text/javascript"
-         src="{{ url_for('static', filename='designer_profile_photo.png') }}">
+         src="{{ url_for('static', filename='Arduino_board_image.png') }}">
 	</div>
 
 </div>
+
+
+<div class="row" style="padding-top: 50px; padding-bottom: 50px" >
+
+	<div class="col-md-6 md-auto">
+
+		<img type="text/javascript"
+         src="{{ url_for('static', filename='Air_Poll_Sensor_Image.png') }}">
+	</div>
+
+	<div class="col-md-6 md-auto content-section-no-bkgrnd-no-justification" style="display: grid; text-align: justify; align-items: center;">
+		<div style="padding-left: 15px;">
+			<div class = "p-non-centered">
+	       		Historical data from both the sensors and OpenWeatherMap API are used to create sensor and API-based models respectively. Every hour, 1-hourly forecasted weather data is predicted using both historical sensor data and OpenWeatherMap's hourly forecast data. This data is stored in the 'Predicted Input Data (Hourly)' Channel on ThingSpeak. <br><br> Both the sensor and API forecast values are passed through their respective predictive models, to output predicted air pollution levels in an hour. This data is stored in the 'Predicted Output Air Pollution (Hourly)' Channel. This prediction allows us to instruct the user as to whether they should open or close their windows in that instant, as we can either avoid reaching a high predicted air pollution level by closing windows, or allow for recirculation of air if future predicted air pollution levels are low & safe.
+       		</div>
+      </div>
+  </div>
+
+</div>
+
+
+<div class="row" style="display: grid; text-align: justify; align-items: center; padding-left: 15px; margin-top: 20px"  >
+	<h2> Project Flow </h2>
+
+	<img type="text/javascript"
+         src="{{ url_for('static', filename='Project_Flowchart.svg') }}">
+</div>
+
 
 <div class="row section-bar"  style="padding-left: 300px; padding-right: 300px; margin-top: 50px">
   <div class="section-bar-text">

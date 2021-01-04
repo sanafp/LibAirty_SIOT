@@ -128,7 +128,7 @@ void getWeather()
   if (client.connect("api.openweathermap.org", 443)) 
   {
     Serial.println("Connecting to OpenWeatherMap...");
-    // send the HTTP PUT request:
+    // send the HTTP GET request:
     client.println(String("GET /data/2.5/onecall?lat=25.178624&lon=55.237260&units=metric&exclude=alerts,minutely,daily,hourly&appid=" + OpenWeatherApiKey + " HTTP/1.1")); //API is localised (using lat-lon coords) to home containing sensors, and is highly specific to exclude excess data and reduce size of extracted JSON file
     client.println("Host: api.openweathermap.org");
     client.println("Connection: close");
@@ -228,13 +228,13 @@ void printWifiStatus()
   Serial.println(WiFi.SSID());
 
   //Print the board's IP address:
-  IPAddress ip = WiFi.localIP();
+  IPAddress ip_Address = WiFi.localIP();
   Serial.print("IP Address: ");
-  Serial.println(ip);
+  Serial.println(ip_Address);
 
   //Print the received signal strength:
-  long rssi = WiFi.RSSI();
-  Serial.print("signal strength (RSSI):");
-  Serial.print(rssi);
+  long rssi_value = WiFi.RSSI();
+  Serial.print("Received Signal strength:");
+  Serial.print(rssi_value);
   Serial.println(" dBm");
 }

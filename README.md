@@ -24,8 +24,10 @@ Video Link: https://youtu.be/dEb5gJz3n9o
 ## Application Structure
 * ```Sensing_and_Storing.ino``` contains the script running on the Arduino that takes in hardware sensor data as well as OpenWeatherMap.org data and uploads it to a ThingSpeak Channel *(Sensor Files > Sensing_and_Storing > Sensing_and_Storing.ino)*
 
-* ```Data_23122020_30122020.xlsm``` contains 1 week's worth of sensor and OpenWeatherMap data (23/12/20 - 30/12/20) extracted from stored location on Raw and Smoothed Data ThingSpeak Channels *(Sensor Files > database_24122020_30122020.xlsm)*
+* ```Data_23122020_30122020.xlsm``` contains 1 week's worth of sensor and OpenWeatherMap data (23/12/20 - 30/12/20) extracted from stored location on Raw and Smoothed Data ThingSpeak Channels *(Sensor Files > database_23122020_30122020.xlsm)*
 
 * *Matlab Online Analysis Folder* contains each piece of code used on ThingSpeak's Matlab to analyse and manipulate the stored data.
 
 * *Matlab Models* contains the Matlab Desktop code for each of the Sensor and OpenWeatherMap API models, as well as the .mat files of each model and their respective zipped equivalents. These are called in one of the online Matlab Analysis scripts.
+
+* ```ThingSpeak Channel Details.txt``` Links provided to access live data repository*(ThingSpeak Files> ThingSpeak Channel Details.txt)*
