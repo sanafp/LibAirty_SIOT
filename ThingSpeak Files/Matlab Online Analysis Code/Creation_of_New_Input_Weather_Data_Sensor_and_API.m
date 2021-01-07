@@ -32,7 +32,7 @@ else
     IDdata = detrend(IDdata,0);
     modelOrder = 8;
     mdl = ar(IDdata,modelOrder);
-    Forecast_Sensor_outdoorHum4Steps = forecast(mdl,IDdata,4); %forecasting data 4 steps into the future as each step is 13mins so four steps = 1hr into the future
+    Forecast_Sensor_outdoorHum4Steps = forecast(mdl,IDdata,4); %forecasting data 4 steps into the future as each step is 15mins so four steps = 1hr into the future
     IDdata = retrend(IDdata,trend);
     Forecast_Sensor_outdoorHum4Steps = retrend(Forecast_Sensor_outdoorHum4Steps,trend);
     Forecast_Sensor_outdoorHum = Forecast_Sensor_outdoorHum4Steps.OutputData(4)
@@ -43,7 +43,7 @@ else
     IDdata = detrend(IDdata,0);
     modelOrder = 8;
     mdl = ar(IDdata,modelOrder);
-    Forecast_Sensor_outdoorTemp4Steps = forecast(mdl,IDdata,4); %forecasting data 4 steps into the future as each step is 13mins so four steps = 1hr into the future
+    Forecast_Sensor_outdoorTemp4Steps = forecast(mdl,IDdata,4); %forecasting data 4 steps into the future as each step is 15mins so four steps = 1hr into the future
     IDdata = retrend(IDdata,trend);
     Forecast_Sensor_outdoorTemp4Steps = retrend(Forecast_Sensor_outdoorTemp4Steps,trend);
     Forecast_Sensor_outdoorTemp = Forecast_Sensor_outdoorTemp4Steps.OutputData(4)
@@ -55,7 +55,7 @@ else
     IDdata = detrend(IDdata,0);
     modelOrder = 8;
     mdl = ar(IDdata,modelOrder);
-    Forecast_Sensor_indoorTemp4Steps = forecast(mdl,IDdata,4); %forecasting data 4 steps into the future as each step is 13mins so four steps = 1hr into the future
+    Forecast_Sensor_indoorTemp4Steps = forecast(mdl,IDdata,4); %forecasting data 4 steps into the future as each step is 15mins so four steps = 1hr into the future
     IDdata = retrend(IDdata,trend);
     Forecast_Sensor_indoorTemp4Steps = retrend(Forecast_Sensor_indoorTemp4Steps,trend);
     Forecast_Sensor_indoorTemp = Forecast_Sensor_indoorTemp4Steps.OutputData(4)

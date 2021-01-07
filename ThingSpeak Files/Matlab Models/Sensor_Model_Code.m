@@ -15,11 +15,13 @@ endDate = [2020,12,30,23,58,54];
 % Extract relevant fields from Cleaned Data channel, between 23rd Dec 09:09:09pm and 30th Dec 23:58:54pm
 modelData = thingSpeakRead(readModelChannelID,'Fields',[1 2 3 5], 'DateRange',[datetime(startDate),datetime(endDate)], 'outputFormat','table', 'ReadKey',readModelAPIKey);
 modelSpec = 'IndoorAirPollution ~ OutdoorHumidity + OutdoorTemperature + TemperatureDifference'; %Create a linear formula for 'modelspec' as a function of the three inputs
+
+%Initial test for correlations
+    %corrcoef(modelData{:,2},modelData{:,5})    %Outdoor Humidity vs Indoor air pollution
+    %corrcoef(modelData{:,3},modelData{:,5})    %Outdoor Temperature vs Indoor air pollution
+    %corrcoef(modelData{:,4},modelData{:,5})    %Temperature Difference vs Indoor air pollution
+
+%Create final predictive model
 sensorModel = fitlm(modelData,modelSpec) %Create a model using the relevant columns from modelData based on modelSpec
 
-%Test evaluation of model
-x1 = [modelData.OutdoorHumidity]; %Independent variable 1 new input
-x2 = [modelData.OutdoorTemperature]; %Independent variable 2 new input
-x3 = [modelData.TemperatureDifference]; %Independent variable 3 new input
-newy = feval(sensorModel,x1,x2,x3); %Dependant outputs for each set of inputs
-    
+

@@ -28,14 +28,12 @@ function toggleFunctions(sensorOutputAirpollData,APIOutputAirpollData,sensorWind
     airpollgauge.innerHTML = '<iframe width="450" height="260" style="border: 0px solid #cccccc; position: relative; left: -60px; top: 0px" src="https://thingspeak.com/channels/1268617/widgets/253478"></iframe> ';
 
 
-    //add other hide/show/change url code here
   } else {
     x.innerHTML = "Sensor-Based Information";
     airpoll.innerHTML = sensorOutputAirpollData + ' PPM';
     winAct.innerHTML = sensorWindowAction;
     airpollgauge.innerHTML = '<iframe width="450" height="260" style="border: 0px solid #cccccc; position: relative; left: -60px; top: 0px" src="https://thingspeak.com/channels/1268617/widgets/253477"></iframe> ';
 
-    //add other hide/show/change url code here
   }
 }
 
