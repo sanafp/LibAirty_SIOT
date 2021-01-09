@@ -169,6 +169,8 @@ void getWeather()
     //Extract required values from JSON file
     OtdrTempAPIValue = doc["current"]["temp"].as<float>(); //Stores outdoor humidity reading from OpenWeatherMap
     OtdrHumidityAPIValue = doc["current"]["humidity"].as<float>(); //Stores outdoor temperature reading from OpenWeatherMap
+    Serial.println("Succcessfully grabbed info from OpenWeatherMap!");
+
     
     //Disconnect
     client.stop();
@@ -199,6 +201,8 @@ void sendThingPost()
     client.println("Host: api.thingspeak.com");
     client.println("Connection: close");
     client.println();
+    Serial.println("Successfully stored in ThingSpeak!");
+
 
     //Check HTTP status
     char status[32] = {0};
